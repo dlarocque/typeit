@@ -1,0 +1,125 @@
+.center-box {
+  display: block;
+  text-align: center;
+  font-family: monospace;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #023047;
+  background-image: url("https://www.transparenttextures.com/patterns/cutcube.png");
+}
+
+@font-face {
+  font-family: 'Major Mono Display', monospace;
+  src: url(https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding: 2%;
+  background-color: #fb8500;
+  height: 500px;
+}
+
+h1 {
+  color: #ecf0f1;
+}
+
+h1 + p {
+  margin-bottom: 5%;
+  color: #3498db;
+}
+
+.scoreWrap {
+  float: left;
+}
+
+.timeWrap {
+  float: right;
+}
+
+.outerWrap:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.bg {
+  background-color: #219ebc;
+}
+
+button {
+  border: none;
+  background-color: #ffb703;
+  -webkit-box-shadow: 0px 5px 0px 0px #ff7803;
+          box-shadow: 0px 5px 0px 0px #ff7803;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 20px;
+  color: #ecf0f1;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+button:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  -webkit-box-shadow: 0px 1px 0px 0px;
+          box-shadow: 0px 1px 0px 0px;
+}
+
+.scoreWrap p, .scoreWrap span, .timeWrap p, .timeWrap span {
+  font-family: monospace;
+  font-size: 25px;
+  color: #3498db;
+}
+
+.wordsWrap {
+  margin-top: 50px;
+}
+
+.words {
+  font-size: 60px;
+  letter-spacing: 1px;
+  color: #ECF0F1;
+}
+
+.words span {
+  font-size: 60px;
+  letter-spacing: 1px;
+  color: #ECF0F1;
+}
+
+.showScore {
+  color: #ecf0f1;
+  font-family: monospace;
+  display: block;
+  position: relative;
+  margin-top: 100px;
+}
+
+.showScore span {
+  color: #ecf0f1;
+  font-family: monospace;
+  display: block;
+  position: relative;
+  margin-top: 100px;
+}
+/*# sourceMappingURL=sty.css.map */
