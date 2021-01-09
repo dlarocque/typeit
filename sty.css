@@ -85,10 +85,15 @@ button:active {
           box-shadow: 0px 1px 0px 0px;
 }
 
-.scoreWrap p, .scoreWrap span, .timeWrap p, .timeWrap span {
+.scoreWrap p, .scoreWrap span, .timeWrap p, .timeWrap span, .finalWrap p,
+.finalWrap span {
   font-family: monospace;
   font-size: 25px;
   color: #3498db;
+}
+
+.finalWrap {
+  visibility: hidden;
 }
 
 .wordsWrap {
@@ -110,7 +115,7 @@ button:active {
 .showScore {
   color: #ecf0f1;
   font-family: monospace;
-  display: block;
+  display: none;
   position: relative;
   margin-top: 100px;
 }
@@ -118,7 +123,7 @@ button:active {
 .showScore span {
   color: #ecf0f1;
   font-family: monospace;
-  display: block;
+  display: none;
   position: relative;
   margin-top: 100px;
 }

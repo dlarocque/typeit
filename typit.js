@@ -3,13 +3,12 @@ var temp = document.querySelector('.time');
  	var words = document.querySelector(".words");
  	var timerDiv = document.querySelector(".time");
   var scoreDiv = document.querySelector(".score");
-  var showScore = document.querySelector(".showScore");
+  var showScore = document.querySelector(".final");
  	var points = 0;
  	var spans;
  	var typed;
- 	var seconds = 5;
-  var spark = new Audio("http://k003.kiwi6.com/hotlink/qdpr7bioht/spark.mp3");
-
+   var seconds = 60;
+   
  	function countdown() {
  		points = 0;
  		var timer = setInterval(function(){
@@ -17,14 +16,13 @@ var temp = document.querySelector('.time');
     		seconds--;
     		temp.innerHTML = seconds;
     		if (seconds === 0) {
-          //alert("Game over! Your score is " + points);
-          console.log("FUCK")
+          showScore.innerHTML = "Final Score: "+points+"!";
+          showScore.style.visibility = "visible";
     			scoreDiv.innerHTML = "0";
           words.innerHTML = "PLAY AGAIN? CLICK START!";
-          showScore.innerHTML = "Final Score: "+points+"!";
     			button.disabled = false;
     			clearInterval(timer);
-    			seconds = 5;
+    			seconds = 60;
     			timerDiv.innerHTML = "60";
           button.disabled = false;
     		}
@@ -33,7 +31,7 @@ var temp = document.querySelector('.time');
 
   	function random() {
   		words.innerHTML = "";
-  		var random = Math.floor(Math.random() * (1943 - 0 + 1)) + 0;
+  		var random = Math.floor(Math.random() * (1943 + 1));
   		var wordArray = list[random].split("");
   		for (var i = 0; i < wordArray.length; i++) { //building the words with spans around the letters
   			var span = document.createElement("span");
@@ -47,7 +45,8 @@ var temp = document.querySelector('.time');
     button.addEventListener("click", function(e){
   		countdown();
   		random();
-  		button.disabled = true;	
+      button.disabled = true;	
+      showScore.style.visibility = "hidden";
   	});
 
   	function typing(e) {
@@ -68,9 +67,6 @@ var temp = document.querySelector('.time');
   					checker++;
   				}
   				if (checker === spans.length) { // if so, animate the words with animate.css class
-            spark.pause();
-					  spark.currentTime = 0;
-            spark.play();
   					points++; // increment the points
   					scoreDiv.innerHTML = points; //add points to the points div
   					document.removeEventListener("keydown", typing, false);
